@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pomni
+* source:	https://sketchfab.com/3d-models/pomni-d9f65344cd2d4cd58b1f79980e51f758
+* author:	CyberChimp (https://sketchfab.com/Josediacool13)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pomni" (https://sketchfab.com/3d-models/pomni-d9f65344cd2d4cd58b1f79980e51f758) by CyberChimp (https://sketchfab.com/Josediacool13) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
