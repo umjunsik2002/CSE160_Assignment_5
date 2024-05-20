@@ -1,11 +1,11 @@
 {
-  "name": "cse160_assignment_3",
+  "name": "cse160_assignment_5",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "npx vite",
-    "predeploy": "npx vite build",
+    "predeploy": "npx vite build && xcopy /e /y src dist\\src\\",
     "deploy": "gh-pages -d dist"
   },
   "author": "",
