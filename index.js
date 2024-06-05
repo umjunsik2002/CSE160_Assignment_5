@@ -4,6 +4,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import { setupGrid } from './src/grid.js';
 import { setupLighting } from './src/lighting.js';
+import { setupGround } from './src/ground.js'
+import { setupFence } from './src/fence.js';
 
 // Setup scene
 const scene = new THREE.Scene();
@@ -18,8 +20,10 @@ renderer.setSize(1280, 720);
 renderer.setClearColor(0x66b2ff);
 
 // Setup grid and lighting
-setupGrid(scene, 32);
+// setupGrid(scene, 32);
 setupLighting(scene);
+setupGround(scene);
+setupFence(scene);
 
 // Setup controls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -38,12 +42,6 @@ loader.load('./src/scene-v1.glb', function (gltf) {
   }
 });
 
-const greenGeometry = new THREE.BoxGeometry(32, 1, 32);
-const greenMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-const greenCube = new THREE.Mesh(greenGeometry, greenMaterial);
-greenCube.position.set(0, -0.5, 0);
-scene.add(greenCube);
-
 let pomni;
 loader.load('./src/pomni/scene.gltf', function (gltf) {
   pomni = gltf.scene;
@@ -51,6 +49,46 @@ loader.load('./src/pomni/scene.gltf', function (gltf) {
   scene.add(pomni);
   const targetPosition = pomni.position.clone().add(new THREE.Vector3(0, 1, 0));
   controls.target.copy(targetPosition);
+});
+
+loader.load('./src/buildings/stilized_house/scene.gltf', function (gltf) {
+  const stilized_house = gltf.scene;
+  stilized_house.position.set(28, 0, 0);
+  scene.add(stilized_house);
+});
+
+loader.load('./src/buildings/free_anime_house/scene.gltf', function (gltf) {
+  const free_anime_house = gltf.scene;
+  free_anime_house.rotateY(Math.PI);
+  free_anime_house.position.set(0, -0.01, 23);
+  scene.add(free_anime_house);
+});
+
+loader.load('./src/buildings/medieval_house/scene.gltf', function (gltf) {
+  const medieval_house = gltf.scene;
+  medieval_house.scale.set(1.5, 1.5, 1.5);
+  medieval_house.position.set(-26, 0, 0);
+  scene.add(medieval_house);
+});
+
+loader.load('./src/buildings/medieval/scene.gltf', function (gltf) {
+  const medieval = gltf.scene;
+  medieval.position.set(20, 0, 8);
+  scene.add(medieval);
+});
+
+loader.load('./src/buildings/middle_age_noble_house/scene.gltf', function (gltf) {
+  const middle_age_noble_house = gltf.scene;
+  middle_age_noble_house.scale.set(32, 32, 32);
+  middle_age_noble_house.position.set(22, 0, -8);
+  scene.add(middle_age_noble_house);
+});
+
+loader.load('./src/buildings/medieval_house_2/scene.gltf', function (gltf) {
+  const medieval_house_2 = gltf.scene;
+  medieval_house_2.rotateY(Math.PI);
+  medieval_house_2.position.set(-19, 1, 10);
+  scene.add(medieval_house_2);
 });
 
 let wKeyPressed = false;
